@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FirstPython.iml" filepath="$PROJECT_DIR$/FirstPython.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PyStudy.iml" filepath="$PROJECT_DIR$/PyStudy.iml" />
     </modules>
   </component>
 </project>
