@@ -2,7 +2,7 @@
 
 
 # 打开数据库连接
-from demo.test005db.conn1 import getConn
+from demo.test003db.conn1 import getConn
 
 db = getConn()
 
