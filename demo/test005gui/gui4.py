@@ -5,8 +5,8 @@ root = Tk()
 
 
 def selectDir():
-    filenames = tkinter.filedialog.askopenfilenames()  # 文件名字
-    # filenames = tkinter.filedialog.askdirectory()  # 文件夹名字
+    # filenames = tkinter.filedialog.askopenfilenames()  # 文件名字
+    filenames = tkinter.filedialog.askdirectory()  # 文件夹名字
     if len(filenames) != 0:
         string_filename = ""
         for i in range(0, len(filenames)):
