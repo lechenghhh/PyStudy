@@ -47,7 +47,7 @@ cursor = db.cursor()
 # SQL 插入语句
 sql = """INSERT INTO EMPLOYEE(FIRST_NAME,
          LAST_NAME, AGE, SEX, INCOME)
-         VALUES ('Mac', 'Mohan', 20, 'M', 2000)"""
+         VALUES ('Mac', 'Mohan222', 20, 'M', 2000)"""
 try:
     # 执行sql语句
     cursor.execute(sql)
