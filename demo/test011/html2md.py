@@ -26,16 +26,18 @@ def setUrl():
 def selectDir():
     root = Tk()
     root.withdraw()
-    file_path = 'D:\\'
+    # file_path = 'D:\\'
     file_path = tkinter.filedialog.askdirectory()
     return file_path
 
 
-url = 'https://blog.csdn.net/lzq520210/article/details/76855606'
+url = 'https://baike.baidu.com/item/Python/407313'
+# url = input("请输入要存储的网址: ")  # 输入获取网址
+# if "http" not in url:
+#     url = "http://" + url
 html = getHtml(url)
 md_data = Tomd(html).markdown
 title = md_data[:20].replace('#', '').replace(' ', '').replace('\n', '')
 
 # 路径选择
-
-save(selectDir() + '\\' + title + '.md', md_data)
+save(selectDir() + '\\' + "fff" + '.md', md_data)

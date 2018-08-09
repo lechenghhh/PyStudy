@@ -37,4 +37,6 @@ if c1 is c2:
 else:
     print("no")
 
-input("\n\n按下 enter 键后退出。")
+# input("\n\n按下 enter 键后退出。")
+name = input("请输入你的名称:")
+print("Hello " + name)

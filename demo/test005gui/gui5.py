@@ -1,5 +1,7 @@
 import tkinter as Tkinter  # 导入TKinter模块
 
+result = ""
+
 
 def getUrl():
     ing = True
@@ -12,8 +14,9 @@ def getUrl():
     user_text.pack()
 
     def getText():
-        user = user_text.get()  # 获取文本框内容
-        print(user)
+        result = user_text.get()  # 获取文本框内容
+        print("getText=" + result)
+        return result
 
     Tkinter.Button(ytm, text="登录", command=getText).pack()  # command绑定获取文本框内容方法
     ytm.mainloop()  # 进入主循环
@@ -21,6 +24,7 @@ def getUrl():
 
 
 getUrl()
+
 
 # from tkinter import *
 # import tkinter.filedialog

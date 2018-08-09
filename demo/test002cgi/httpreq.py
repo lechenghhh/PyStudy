@@ -8,7 +8,7 @@ def getHtml(url):
         url = 'http://www.baidu.com'
     f = urllib.request.urlopen(url)
     html = f.read().decode('utf-8')
-    print(html)
+    # print(html)
     return html
 
 
