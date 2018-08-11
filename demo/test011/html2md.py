@@ -3,9 +3,8 @@ import urllib
 # https://www.v2ex.com/amp/t/364078
 import tkinter.filedialog
 from tkinter import *
-
+import time
 from tomd import Tomd  # 安装: pip install tomd
-
 from demo.test002cgi.httpreq import getHtml
 
 
@@ -37,7 +36,6 @@ url = 'https://baike.baidu.com/item/Python/407313'
 #     url = "http://" + url
 html = getHtml(url)
 md_data = Tomd(html).markdown
-title = md_data[:20].replace('#', '').replace(' ', '').replace('\n', '')
 
 # 路径选择
-save(selectDir() + '\\' + "fff" + '.md', md_data)
+save(selectDir() + '\\' + str(time.time()) + '.md', md_data)

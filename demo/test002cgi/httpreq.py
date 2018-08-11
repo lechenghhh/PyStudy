@@ -1,4 +1,5 @@
 import urllib.request
+import urllib.parse
 
 
 # 模块命名时不要与现有模块名冲突
@@ -12,4 +13,4 @@ def getHtml(url):
     return html
 
 
-getHtml('http://www.baidu.com')
+print(getHtml('http://www.baidu.com'))
