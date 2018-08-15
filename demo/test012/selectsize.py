@@ -61,7 +61,7 @@ def get_rect(im, title='请选择指定区域大小'):  # (a,b) = get_rect(im, t
 
 # 读取摄像头/视频,然后用鼠标事件画框
 def readVideo(skipFrame):  # pathName为视频文件路径,skipFrame为视频的第skipFrame帧
-    selectXY = (0, 0)
+    selectXY = [(0, 0), (0, 0)]
 
     camera = cv2.VideoCapture(0)  # 读取摄像头
     if not camera.isOpened():  # 如果为发现摄像头,则按照路径pathName读取视频文件
@@ -71,6 +71,7 @@ def readVideo(skipFrame):  # pathName为视频文件路径,skipFrame为视频的
     while (camera.isOpened()):
         ret, frame = camera.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        cv2.rectangle(frame, selectXY[0], selectXY[1], (0, 255, 0), 2)
         if (c >= 20):
             mask = np.zeros(gray.shape, dtype=np.uint8)  # 掩码操作,该矩阵与图片大小类型一致,为初始化全0像素值,之后对其操作区域赋值为1即可
             if (c == skipFrame):
@@ -83,7 +84,6 @@ def readVideo(skipFrame):  # pathName为视频文件路径,skipFrame为视频的
                 gray1, gray2 = prev_frame, frame
             cv2.imshow('frame', frame)
             print(selectXY[0], "---", selectXY[1])
-            cv2.rectangle(frame, selectXY[0], selectXY[1], (0, 255, 0), 2)
         c = c + 1
         prev_gray = gray
         prev_frame = frame
