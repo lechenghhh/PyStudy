@@ -2,7 +2,8 @@ import tkinter as tk
 from tkinter import ttk
 
 from demo.test012.opencv01 import showCameraWindow
-from demo.test012.selectxy import showSelectXY
+from demo.test012.opencv02 import showCameraWindow2
+from demo.test012.opencv03 import showCameraWindow3
 
 win = tk.Tk()
 win.title("Python OpenCV实践")  # 添加标题
@@ -12,15 +13,17 @@ aLabel.grid(column=1, row=0)
 
 
 def btn1():  # 当acction被点击时,该函数则生效
-    showSelectXY()
+    showCameraWindow(0, 0, 0, 0)
     print("儿童模式启动")
 
 
 def btn2():
+    showCameraWindow2()
     print("老人模式启动")
 
 
 def btn3():
+    showCameraWindow3()
     print("防盗模式启动")
 
 

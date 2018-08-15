@@ -27,9 +27,10 @@ def call_back_left(event):
         end[1] = event.y
     index = not index
 
+
 def btn1():
-    print(start)
-    showCameraWindow(start[0], start[1], end[0], end[1])
+    print(start, end)
+    # showCameraWindow(start[0], start[1], end[0], end[1])
 
 
 def showSelectXY():
