@@ -53,7 +53,6 @@ def showCameraWindow(startX, startY, endX, endY):
         cv2.imshow('dis', diff)
 
         key = cv2.waitKey(1) & 0xFF
-
         if key == ord('q'):  # 按'q'健退出循环
             break
 

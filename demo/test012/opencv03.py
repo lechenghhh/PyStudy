@@ -54,7 +54,7 @@ def showCameraWindow3():
             if cv2.contourArea(c) < 1500:
                 continue
             (x, y, w, h) = cv2.boundingRect(c)  # 该函数计算矩形的边界框
-            cv2.rectangle(frame_lwpCV, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            cv2.rectangle(frame_lwpCV, (x, y), (x + w, y + h), (255, 0, 0), 2)
             if isRing:
                 visTiem = time.time()
                 print("发现目标-时间是:", visTiem)
@@ -64,10 +64,10 @@ def showCameraWindow3():
         cv2.imshow('contours', frame_lwpCV)
         cv2.imshow('dis', diff)
 
-        key = cv2.waitKey(1) & 0xFF
         if time.time() - visTiem > spaceTime:  # 大于间隔时间spaceTime
             isRing = True
         # print(time.time(), visTiem)
+        key = cv2.waitKey(1) & 0xFF
         if key == ord('q'):  # 按'q'健退出循环
             break
 
