@@ -61,6 +61,8 @@ def get_rect(im, title='get_rect'):  # (a,b) = get_rect(im, title='get_rect')
 
 # 读取摄像头/视频，然后用鼠标事件画框
 def readVideo(skipFrame):  # pathName为视频文件路径，skipFrame为视频的第skipFrame帧
+    selectXY = [(0, 0), (0, 0)]
+
     camera = cv2.VideoCapture(0)  # 读取摄像头
     if not camera.isOpened():  # 如果为发现摄像头，则按照路径pathName读取视频文件
         camera = cv2.VideoCapture(selectDir())  # 读取视频文件，如pathName='D:/test/test.mp4'
@@ -69,10 +71,11 @@ def readVideo(skipFrame):  # pathName为视频文件路径，skipFrame为视频�
     while (camera.isOpened()):
         ret, frame = camera.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        cv2.rectangle(frame, selectXY[0], selectXY[1], (0, 255, 0), 2)
         if (c >= skipFrame):
             mask = np.zeros(gray.shape, dtype=np.uint8)  # 掩码操作，该矩阵与图片大小类型一致，为初始化全0像素值，之后对其操作区域赋值为1即可
             if (c == skipFrame):
-                (a, b) = get_rect(frame, title='get_rect')  # 鼠标画矩形框
+                selectXY = get_rect(frame, title='get_rect')  # 鼠标画矩形框
                 img01, img02 = frame, frame
                 gray01, gray02 = gray, gray
             else:
@@ -97,4 +100,4 @@ def selectDir():
 
 
 if __name__ == '__main__':
-    readVideo(111)
+    readVideo(20)

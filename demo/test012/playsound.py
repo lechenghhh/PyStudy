@@ -9,6 +9,7 @@ def print_time(threadName, delay):
     print("播放铃声~")
     global isRun
     winsound.PlaySound("ring.wav", winsound.SND_FILENAME)
+
     isRun = False;
 
 

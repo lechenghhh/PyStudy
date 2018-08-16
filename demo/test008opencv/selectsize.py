@@ -66,27 +66,17 @@ def readVideo(skipFrame):  # pathName为视频文件路径,skipFrame为视频的
     camera = cv2.VideoCapture(0)  # 读取摄像头
     if not camera.isOpened():  # 如果为发现摄像头,则按照路径pathName读取视频文件
         camera = cv2.VideoCapture(selectDir())  # 读取视频文件,如pathName='D:/test/test.mp4'
-    c = 1
+    i = 0
 
     while (camera.isOpened()):
         ret, frame = camera.read()
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        cv2.rectangle(frame, selectXY[0], selectXY[1], (0, 255, 0), 2)
-        if (c >= 20):
-            mask = np.zeros(gray.shape, dtype=np.uint8)  # 掩码操作,该矩阵与图片大小类型一致,为初始化全0像素值,之后对其操作区域赋值为1即可
-            if (c == skipFrame):
+        cv2.rectangle(frame, selectXY[0], selectXY[1], (255, 255, 0), 2)
+        i += 1
+        if (i >= 20):
+            if (i == skipFrame):
                 selectXY = get_rect(frame, title='get_rect')  # 鼠标画矩形框
                 print(selectXY)
-                img01, img02 = frame, frame
-                gray01, gray02 = gray, gray
-            else:
-                img1, img2 = prev_frame, frame
-                gray1, gray2 = prev_frame, frame
             cv2.imshow('frame', frame)
-            print(selectXY[0], "---", selectXY[1])
-        c = c + 1
-        prev_gray = gray
-        prev_frame = frame
 
         if cv2.waitKey(1) & 0xFF == ord('q'):  # 点击视频窗口,按q键退出
             break

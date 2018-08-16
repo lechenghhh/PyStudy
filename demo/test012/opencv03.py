@@ -7,8 +7,9 @@ import winsound
 import time
 
 from demo.test012.playsound import ring
+from demo.test012.sendemail import send
 
-spaceTime = 30  # 间隔时间设置为30秒
+spaceTime = 10  # 间隔时间设置为30秒
 
 
 def showCameraWindow3():
@@ -55,11 +56,13 @@ def showCameraWindow3():
                 continue
             (x, y, w, h) = cv2.boundingRect(c)  # 该函数计算矩形的边界框
             cv2.rectangle(frame_lwpCV, (x, y), (x + w, y + h), (255, 0, 0), 2)
+
             if isRing:
                 visTiem = time.time()
-                print("发现目标-时间是:", visTiem)
                 isRing = False
+                print("报警:", visTiem)
                 ring()
+                # send("防盗报警", "有人入室盗窃！！")  # 发送邮件
 
         cv2.imshow('contours', frame_lwpCV)
         cv2.imshow('dis', diff)
