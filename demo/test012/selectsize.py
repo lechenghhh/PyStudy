@@ -87,6 +87,7 @@ def readVideo(skipFrame):  # pathName为视频文件路径,skipFrame为视频的
         c = c + 1
         prev_gray = gray
         prev_frame = frame
+
         if cv2.waitKey(1) & 0xFF == ord('q'):  # 点击视频窗口,按q键退出
             break
     camera.release()

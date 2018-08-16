@@ -5,8 +5,7 @@ import cv2
 import numpy as np
 
 
-def showCameraWindow(startX, startY, endX, endY):
-    print(startX, startY, endX, endY)
+def showCameraWindow():
 
     camera = cv2.VideoCapture(0)  # 参数0表示第一个摄像头
     if (camera.isOpened()):  # 判断视频是否打开

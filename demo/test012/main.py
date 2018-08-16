@@ -13,7 +13,7 @@ aLabel.grid(column=1, row=0)
 
 
 def btn1():  # 当acction被点击时,该函数则生效
-    showCameraWindow(0, 0, 0, 0)
+    showCameraWindow()
     print("儿童模式启动")
 
 
