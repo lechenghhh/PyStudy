@@ -47,8 +47,7 @@ while True:
 
     # 扩展阀值图像填充孔洞，然后找到阀值图像上的轮廓
     thresh = cv2.dilate(thresh, None, iterations=2)
-    (_, cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
-                                    cv2.CHAIN_APPROX_SIMPLE)
+    (_, cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     # 遍历轮廓
     for c in cnts:

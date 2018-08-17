@@ -38,8 +38,7 @@ while True:
     diff = cv2.threshold(diff, 148, 255, cv2.THRESH_BINARY)[1]  # 二值化阈值处理
     diff = cv2.dilate(diff, es, iterations=2)  # 形态学膨胀
     # 显示矩形框
-    image, contours, hierarchy = cv2.findContours(diff.copy(), cv2.RETR_EXTERNAL,
-                                                  cv2.CHAIN_APPROX_SIMPLE)  # 该函数计算一幅图像中目标的轮廓
+    image, contours, hierarchy = cv2.findContours(diff.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # 该函数计算一幅图像中目标的轮廓
     for c in contours:
         if cv2.contourArea(c) < 1500:  # 对于矩形区域，只显示大于给定阈值的轮廓，所以一些微小的变化不会显示。对于光照不变和噪声低的摄像头可不设定轮廓最小尺寸的阈值
             continue
