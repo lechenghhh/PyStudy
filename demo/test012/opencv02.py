@@ -45,7 +45,7 @@ def showCameraWindow2():
         # 对于每个从背景之后读取的帧都会计算其与背景之间的差异,并得到一个差分图(different map).
         # 还需要应用阈值来得到一幅黑白图像,并通过下面代码来膨胀(dilate)图像,从而对孔(hole)和缺陷(imperfection)进行归一化处理
         diff = cv2.absdiff(background, gray_lwpCV)
-        diff = cv2.threshold(diff, 148, 255, cv2.THRESH_BINARY)[1]  # 二值化阈值处理
+        diff = cv2.threshold(diff, 48, 255, cv2.THRESH_BINARY)[1]  # 二值化阈值处理
         diff = cv2.dilate(diff, es, iterations=2)  # 形态学膨胀
         # 显示矩形框
         # 该函数计算一幅图像中目标的轮廓
