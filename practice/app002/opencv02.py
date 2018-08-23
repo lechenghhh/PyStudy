@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 import time
 
-from practice.app002 import ring
+from practice.app002.playsound import ring
 
 spaceTime = 10  # 间隔时间设置为30秒
 scale = 1.5  # 高度与宽度的比例，用以控制摔倒的判定界限

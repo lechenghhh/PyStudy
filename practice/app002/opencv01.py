@@ -4,7 +4,7 @@
 import cv2
 import numpy as np
 import time
-from practice.app002 import ring
+from practice.app002.playsound import ring
 
 spaceTime = 10  # 间隔时间设置为30秒
 
