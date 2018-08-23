@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
 
-from demo.test012.opencv01 import showCameraWindow
-from demo.test012.opencv02 import showCameraWindow2
-from demo.test012.opencv03 import showCameraWindow3
+from practice.app002 import showCameraWindow
+from practice.app002 import showCameraWindow2
+from practice.app002 import showCameraWindow3
 
 win = tk.Tk()
 win.title("Python OpenCV实践")  # 添加标题

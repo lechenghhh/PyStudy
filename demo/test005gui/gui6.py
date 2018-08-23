@@ -8,8 +8,6 @@ from tkinter import *
 from tkinter import ttk
 import cv2
 
-from demo.test012.opencv01 import showCameraWindow
-
 start = [0, 0];
 end = [0, 0]
 index = True

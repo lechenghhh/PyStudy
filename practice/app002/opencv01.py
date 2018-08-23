@@ -4,8 +4,7 @@
 import cv2
 import numpy as np
 import time
-from demo.test012.playsound import ring
-from demo.test012.sendemail import send
+from practice.app002 import ring
 
 spaceTime = 10  # 间隔时间设置为30秒
 

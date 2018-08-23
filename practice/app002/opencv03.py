@@ -3,17 +3,14 @@
 # https://www.jb51.net/article/132480.htm
 import cv2
 import numpy as np
-import winsound
 import time
 
-from demo.test012.playsound import ring
-from demo.test012.sendemail import send
+from practice.app002 import ring
 
 spaceTime = 10  # 间隔时间设置为30秒
-scale = 1.5  # 高度与宽度的比例，用以控制摔倒的判定界限
 
 
-def showCameraWindow2():
+def showCameraWindow3():
     visTiem = time.time()
     isRing = False
 
@@ -56,15 +53,14 @@ def showCameraWindow2():
             if cv2.contourArea(c) < 1500:
                 continue
             (x, y, w, h) = cv2.boundingRect(c)  # 该函数计算矩形的边界框
-            cv2.rectangle(frame_lwpCV, (x, y), (x + w, y + h), (0, 0, 255), 2)
-            if h * scale < w:  # 进行比例判断，如果宽比高大，说明目标躺下了
-                print("目标疑似躺下了！", "w=", w, "h=", h)
-                if isRing:
-                    visTiem = time.time()
-                    isRing = False
-                    print("报警:", visTiem)
-                    ring()
-                    # send("摔倒报警", "老人摔倒了！")  # 发送邮件
+            cv2.rectangle(frame_lwpCV, (x, y), (x + w, y + h), (255, 0, 0), 2)
+
+            if isRing:
+                visTiem = time.time()
+                isRing = False
+                print("报警:", visTiem)
+                ring()
+                # send("防盗报警", "有人入室盗窃！！")  # 发送邮件
 
         cv2.imshow('contours', frame_lwpCV)
         cv2.imshow('dis', diff)
@@ -82,4 +78,4 @@ def showCameraWindow2():
 
 
 if __name__ == '__main__':
-    showCameraWindow2()
+    showCameraWindow3()

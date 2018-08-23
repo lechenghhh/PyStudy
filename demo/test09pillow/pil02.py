@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
+from demo.test09pillow.selectImg import selectFile
 
 # http://font.chinaz.com/zhongwenziti.html 字体下载网站
-from pil.selectImg import selectFile
 
 img = Image.open(selectFile())
 draw = ImageDraw.Draw(img)

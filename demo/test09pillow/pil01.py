@@ -3,7 +3,7 @@
 from PIL import Image
 import tkinter
 import tkinter.filedialog
-from pil.selectImg import selectFile
+from demo.test09pillow.selectImg import selectFile
 
 # 要索引的字符列表
 
