@@ -1,4 +1,4 @@
-# 卡牌生成器
+# 卡牌生成器简易版
 
 #### 启动程序，请设置路径参数
 #### 安装python excel库 指令：pip install xlrd
