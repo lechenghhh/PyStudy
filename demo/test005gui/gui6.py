@@ -8,7 +8,7 @@ from tkinter import *
 from tkinter import ttk
 import cv2
 
-start = [0, 0];
+start = [0, 0]
 end = [0, 0]
 index = True
 

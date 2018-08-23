@@ -14,7 +14,7 @@ def selectDir():
         lb.config(text="您选择的文件是：" + string_filename)
         print("您选择的文件是：" + string_filename)
     else:
-        lb.config(text="您没有选择任何文件");
+        lb.config(text="您没有选择任何文件")
 
 
 lb = Label(root, text='')
