@@ -3,10 +3,13 @@ import xlrd
 
 from datetime import date, datetime
 
+from demo.test09pillow.selectImg import selectFile
+
 
 def read_excel():
     # 文件位置
-    ExcelFile = xlrd.open_workbook(r'C:\Users\User\Desktop\excel.xlsx')
+    # ExcelFile = xlrd.open_workbook(r'C:\Users\User\Desktop\excel.xlsx')
+    ExcelFile = xlrd.open_workbook(selectFile())
     # 获取目标EXCEL文件sheet名
     print(ExcelFile.sheet_names())
     # ------------------------------------
@@ -14,8 +17,8 @@ def read_excel():
     # sheet2_name=ExcelFile.sheet_names()[1]
     # ------------------------------------
     # 获取sheet内容【1.根据sheet索引2.根据sheet名称】
-    # sheet=ExcelFile.sheet_by_index(1)
-    sheet = ExcelFile.sheet_by_name('Sheet1')
+    sheet = ExcelFile.sheet_by_index(0)
+    # sheet = ExcelFile.sheet_by_name('Sheet1')
     # 打印sheet的名称，行数，列数
     print(sheet.name, sheet.nrows, sheet.ncols)
     # 获取整行或者整列的值
