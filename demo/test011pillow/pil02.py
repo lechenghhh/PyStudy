@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
-from demo.test09pillow.selectImg import selectFile
+from demo.test011pillow.selectImg import selectFile
 
 # http://font.chinaz.com/zhongwenziti.html 字体下载网站
 

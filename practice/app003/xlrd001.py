@@ -3,7 +3,7 @@ import xlrd
 
 from datetime import date, datetime
 
-from demo.test09pillow.selectImg import selectFile, selectDir
+from demo.test011pillow.selectImg import selectFile, selectDir
 from practice.app003.pil02 import setTextWithImg
 
 bg_path = ""
